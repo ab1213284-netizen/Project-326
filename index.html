@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Mess Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🍽️ Hostel Mess Management</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Weekly Menu</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#summary">Summary</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Welcome to Our Hostel Mess!</h2>
+    <p>Check your daily meals and help us improve our food.</p>
+    <h3>⭐ Today's Special</h3>
+    <p id="special">Veg Biryani with Raita</p>
+</section>
+
+<section id="timings">
+    <h2>Meal Timings</h2>
+    <div class="timing-container">
+        <div class="timing-card">
+            <h3>🌅 Breakfast</h3>
+            <p>7:30 AM – 9:00 AM</p>
+        </div>
+        <div class="timing-card">
+            <h3>☀️ Lunch</h3>
+            <p>12:00 PM – 2:00 PM</p>
+        </div>
+        <div class="timing-card">
+            <h3>🌙 Dinner</h3>
+            <p>7:00 PM – 9:00 PM</p>
+        </div>
+    </div>
+</section>
+
+<section id="menu">
+    <h2>Weekly Mess Menu</h2>
+
+    <label for="day">Select Day:</label>
+    <select id="day" onchange="showMenu()">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+    </select>
+
+    <div id="menu-container" class="menu-container"></div>
+</section>
+
+<section id="feedback">
+    <h2>Student Feedback</h2>
+    <form id="feedbackForm">
+        <label for="student">Student Name (optional)</label>
+        <input type="text" id="student" placeholder="Enter your name">
+
+        <label for="feedbackDay">Day</label>
+        <select id="feedbackDay">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+        </select>
+
+        <label for="meal">Select Meal</label>
+        <select id="meal">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+        </select>
+
+        <label for="rating">Rate Your Meal (out of 5)</label>
+        <select id="rating">
+            <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+            <option value="4">⭐⭐⭐⭐ - Very Good</option>
+            <option value="3">⭐⭐⭐ - Average</option>
+            <option value="2">⭐⭐ - Needs Improvement</option>
+            <option value="1">⭐ - Poor</option>
+        </select>
+
+        <label for="improvement">What should we improve?</label>
+        <select id="improvement">
+            <option>No suggestion</option>
+            <option>Food Taste</option>
+            <option>Food Quality</option>
+            <option>Food Quantity</option>
+            <option>Menu Variety</option>
+            <option>Hygiene and Cleanliness</option>
+            <option>Meal Timings</option>
+            <option>Other</option>
+        </select>
+
+        <label for="preferredTime">Preferred Meal Timing (optional)</label>
+        <input type="text" id="preferredTime"
+               placeholder="Example: Breakfast 8 AM to 9:30 AM">
+
+        <label for="comments">Your Feedback</label>
+        <textarea id="comments" rows="4"
+                  placeholder="Tell us what you liked or what we can improve..."
+                  required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+        <p id="message"></p>
+    </form>
+</section>
+
+<section id="summary">
+    <h2>Feedback Summary</h2>
+    <div class="summary-card">
+        <h3>Average Rating</h3>
+        <p id="average">No ratings yet</p>
+        <p id="responses">0 feedback responses</p>
+    </div>
+
+    <h3>Latest Feedback</h3>
+    <div id="feedback-list"></div>
+
+    <button type="button" class="clear-button" onclick="clearFeedback()">
+        Clear Demo Feedback
+    </button>
+</section>
+
+<footer>
+    <p>Hostel Mess Management System</p>
+    <p>Created using HTML, CSS and JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
